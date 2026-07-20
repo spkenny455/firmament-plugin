@@ -1,0 +1,15 @@
+{
+  "name": "firmament",
+  "owner": {
+    "name": "Firmament",
+    "url": "https://getfirmament.com"
+  },
+  "plugins": [
+    {
+      "name": "firmament",
+      "source": "./plugins/firmament",
+      "description": "Connect Claude Code to Firmament — your team's shared, verified knowledge. Ask what's true about your org and how work gets done, then record what you learn so the next agent doesn't relearn it.",
+      "version": "0.1.0"
+    }
+  ]
+}

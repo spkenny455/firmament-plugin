@@ -1,0 +1,12 @@
+{
+  "name": "firmament",
+  "displayName": "Firmament",
+  "version": "0.1.0",
+  "description": "Your team's shared, verified knowledge for AI agents: ask what's true about your org and how work gets done, then record what you learn.",
+  "author": {
+    "name": "Firmament",
+    "url": "https://getfirmament.com"
+  },
+  "homepage": "https://getfirmament.com",
+  "keywords": ["knowledge", "memory", "team", "org-context", "mcp"]
+}
