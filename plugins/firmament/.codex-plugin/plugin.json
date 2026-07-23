@@ -1,0 +1,29 @@
+{
+  "name": "firmament",
+  "version": "0.2.1",
+  "description": "Your team's shared, verified knowledge for AI agents: ask what's true about your org and how work gets done, then record what you learn. One install wires the ask & submit tools and a standing session reminder to use them.",
+  "author": {
+    "name": "Firmament",
+    "url": "https://getfirmament.com"
+  },
+  "homepage": "https://getfirmament.com",
+  "repository": "https://github.com/spkenny455/firmament-plugin",
+  "license": "MIT",
+  "keywords": ["knowledge", "memory", "team", "org-context", "mcp"],
+  "mcpServers": "./codex-mcp.json",
+  "hooks": "./hooks/hooks.json",
+  "interface": {
+    "displayName": "Firmament",
+    "shortDescription": "Your team's shared knowledge: ask before you act, record what you learn.",
+    "longDescription": "Firmament is your team's shared, verified knowledge base. This plugin wires the ask & submit tools (remote MCP, one-time browser sign-in) and a session reminder so your agent consults the team's knowledge on org-specific work and records what it learns for the next agent.",
+    "developerName": "Firmament",
+    "category": "Productivity",
+    "capabilities": ["Read", "Write"],
+    "websiteURL": "https://getfirmament.com",
+    "defaultPrompt": [
+      "Ask Firmament what the team knows about this before starting.",
+      "Submit what you learned back to Firmament."
+    ],
+    "brandColor": "#2C4FD8"
+  }
+}

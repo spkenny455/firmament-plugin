@@ -1,0 +1,20 @@
+{
+  "name": "firmament",
+  "interface": {
+    "displayName": "Firmament"
+  },
+  "plugins": [
+    {
+      "name": "firmament",
+      "source": {
+        "source": "local",
+        "path": "./plugins/firmament"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
