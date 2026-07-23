@@ -10,7 +10,7 @@
       "name": "firmament",
       "source": "./plugins/firmament",
       "description": "Connect Claude Code to Firmament — your team's shared, verified knowledge. One install wires the ask & submit tools, a standing reminder to consult them every session, and automatic session capture.",
-      "version": "0.2.1"
+      "version": "0.2.2"
     }
   ]
 }

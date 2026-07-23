@@ -1,7 +1,7 @@
 {
   "name": "firmament",
   "displayName": "Firmament",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Your team's shared, verified knowledge for AI agents: ask what's true about your org and how work gets done, then record what you learn. One install wires the ask & submit tools, a standing session reminder to use them, and automatic session capture.",
   "author": {
     "name": "Firmament",
