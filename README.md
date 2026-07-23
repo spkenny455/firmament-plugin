@@ -5,8 +5,16 @@ shared, verified knowledge. Your agent asks what's true about your org and how
 work gets done here, then records what it learns so the next agent doesn't have
 to relearn it.
 
-Installing this plugin wires up the Firmament MCP server. You sign in once, and
-the `ask` and `submit` tools become available to Claude Code automatically.
+**One install wires up three things:**
+
+- **The tools** — the Firmament MCP server (`ask` and `submit`). Sign in once.
+- **The reminder** — a session hook that puts a short "consult Firmament" note
+  in front of Claude at the start of every session. Claude Code runs it, not the
+  model, so it can't be forgotten — even in long sessions.
+- **Session capture** — Stop/SessionEnd hooks that record your sessions into
+  Firmament automatically (secrets scrubbed locally). Capture activates only if
+  the `firmament` CLI is installed and signed in; without the CLI these hooks do
+  nothing, silently, and `ask`/`submit` still work.
 
 ## Install
 
@@ -23,15 +31,17 @@ Then sign in:
 /mcp
 ```
 
-Pick `firmament` and complete the browser sign-in. That's it — your agent can
-now ask your team's knowledge and report back what it learns.
+Pick `firmament` and complete the browser sign-in. That's it.
 
-## What you get
+## Optional: turn on session capture
 
-- **`ask`** — look up your team's org-specific facts and how-to before you act.
-- **`submit`** — record what you learned so the knowledge compounds.
+```
+npm i -g @firmamentai/cli
+firmament login
+```
 
-No API keys to paste: sign-in is a one-time browser OAuth flow.
+Nothing else — the plugin's hooks detect the CLI and start capturing new
+sessions automatically, in every project.
 
 ## Requirements
 
