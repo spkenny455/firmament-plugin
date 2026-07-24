@@ -1,4 +1,17 @@
-# Firmament for Claude Code
+# Firmament for Claude Code (and Codex, Copilot CLI, Cursor)
+
+One repo, four ecosystems: this marketplace serves **Claude Code** (and
+Cowork) via `.claude-plugin/`, **OpenAI Codex** via `.codex-plugin/` +
+`.agents/plugins/`, **GitHub Copilot CLI** (reads the Claude format
+directly), and **Cursor** via `.cursor-plugin/` + `firmament-cursor/`.
+
+- Codex: `codex plugin marketplace add spkenny455/firmament-plugin` then
+  `codex plugin add firmament@firmament`
+- Copilot CLI: `copilot plugin marketplace add spkenny455/firmament-plugin`
+  then `copilot plugin install firmament@firmament`
+- Cursor: install "Firmament" from the Cursor Marketplace (pending review)
+
+The rest of this README covers Claude Code.
 
 Connect Claude Code to **[Firmament](https://getfirmament.com)** — your team's
 shared, verified knowledge. Your agent asks what's true about your org and how

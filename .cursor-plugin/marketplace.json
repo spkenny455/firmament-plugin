@@ -1,0 +1,17 @@
+{
+  "name": "firmament",
+  "owner": {
+    "name": "Firmament",
+    "url": "https://getfirmament.com"
+  },
+  "metadata": {
+    "description": "Firmament — your team's shared, verified knowledge for AI agents: ask what's true about your org, record what you learn."
+  },
+  "plugins": [
+    {
+      "name": "firmament",
+      "source": "firmament-cursor",
+      "description": "One install wires the Firmament ask & submit tools (one-time browser sign-in) and an always-on rule to consult the team's knowledge and record what was learned."
+    }
+  ]
+}

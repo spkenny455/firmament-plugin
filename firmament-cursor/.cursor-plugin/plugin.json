@@ -1,0 +1,15 @@
+{
+  "name": "firmament",
+  "displayName": "Firmament",
+  "version": "0.1.0",
+  "description": "Your team's shared, verified knowledge for AI agents: ask what's true about your org and how work gets done, then record what you learn. One install wires the ask & submit tools and an always-on reminder to use them.",
+  "author": {
+    "name": "Firmament",
+    "url": "https://getfirmament.com"
+  },
+  "homepage": "https://getfirmament.com",
+  "repository": "https://github.com/spkenny455/firmament-plugin",
+  "license": "MIT",
+  "keywords": ["knowledge", "memory", "team", "org-context", "mcp"],
+  "category": "developer-tools"
+}
