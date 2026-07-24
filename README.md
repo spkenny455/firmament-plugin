@@ -31,20 +31,22 @@ to relearn it.
 
 ## Install
 
-In Claude Code:
+In your terminal (works for both the terminal and desktop app — the two share
+plugin config):
 
 ```
-/plugin marketplace add spkenny455/firmament-plugin
-/plugin install firmament@firmament
+claude plugin marketplace add spkenny455/firmament-plugin
+claude plugin install firmament@firmament
 ```
 
-Then sign in:
+No `claude` command? The desktop app doesn't include it — install it first:
+`npm i -g @anthropic-ai/claude-code`.
 
-```
-/mcp
-```
+Restart Claude Code, then complete the browser sign-in when it prompts for the
+`firmament` server (terminal app: run `/mcp` and pick `firmament`). That's it.
 
-Pick `firmament` and complete the browser sign-in. That's it.
+Note: the `/plugin` slash command only exists in the terminal app — on the
+desktop app use the terminal commands above.
 
 ## Optional: turn on session capture
 
