@@ -18,16 +18,12 @@ shared, verified knowledge. Your agent asks what's true about your org and how
 work gets done here, then records what it learns so the next agent doesn't have
 to relearn it.
 
-**One install wires up three things:**
+**One install wires up two things:**
 
 - **The tools** — the Firmament MCP server (`ask` and `submit`). Sign in once.
 - **The reminder** — a session hook that puts a short "consult Firmament" note
   in front of Claude at the start of every session. Claude Code runs it, not the
   model, so it can't be forgotten — even in long sessions.
-- **Session capture** — Stop/SessionEnd hooks that record your sessions into
-  Firmament automatically (secrets scrubbed locally). Capture activates only if
-  the `firmament` CLI is installed and signed in; without the CLI these hooks do
-  nothing, silently, and `ask`/`submit` still work.
 
 ## Install
 
@@ -48,15 +44,19 @@ Restart Claude Code, then complete the browser sign-in when it prompts for the
 Note: the `/plugin` slash command only exists in the terminal app — on the
 desktop app use the terminal commands above.
 
-## Optional: turn on session capture
+## Optional: the command-line tool
 
 ```
 npm i -g @firmamentai/cli
 firmament login
 ```
 
-Nothing else — the plugin's hooks detect the CLI and start capturing new
-sessions automatically, in every project.
+Gives you `firmament ask` and `firmament submit` in any terminal, which is also
+the fallback Claude uses if the connector isn't signed in.
+
+Version 0.2.5 removed the background session-capture hooks. Reading whole
+transcripts cost far more than it was worth and produced nothing at all on 43%
+of sessions, so knowledge now comes from Claude calling `submit` deliberately.
 
 ## Requirements
 
