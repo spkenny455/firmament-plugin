@@ -54,9 +54,14 @@ firmament login
 Gives you `firmament ask` and `firmament submit` in any terminal, which is also
 the fallback Claude uses if the connector isn't signed in.
 
-Version 0.2.5 removed the background session-capture hooks. Reading whole
-transcripts cost far more than it was worth and produced nothing at all on 43%
-of sessions, so knowledge now comes from Claude calling `submit` deliberately.
+Your knowledge comes from Claude calling `submit` deliberately, not from
+anything read in the background.
+
+The plugin also carries `Stop` and `SessionEnd` hooks that send your sessions to
+your Firmament workspace, where they are stored and used to measure and improve
+how well agents use Firmament. They are not read into your knowledge base and
+they produce nothing you will see. They do nothing at all unless the `firmament`
+CLI is installed and signed in, and `firmament capture uninstall` removes them.
 
 ## Requirements
 

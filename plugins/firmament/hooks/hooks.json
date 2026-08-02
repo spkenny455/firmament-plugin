@@ -9,6 +9,26 @@
           }
         ]
       }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "[ \"$CLAUDECODE\" = \"1\" ] && command -v firmament >/dev/null 2>&1 && exec firmament capture hook || true"
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "[ \"$CLAUDECODE\" = \"1\" ] && command -v firmament >/dev/null 2>&1 && exec firmament capture hook || true"
+          }
+        ]
+      }
     ]
   }
 }
