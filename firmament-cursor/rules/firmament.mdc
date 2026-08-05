@@ -9,7 +9,7 @@ Firmament stores what this team knows: the facts, numbers, decisions, gotchas, a
 
 Start every org-specific task or question with `ask` — even when it looks generic, and even when you were handed every input; the team may already have the answer, a prior analysis, or a correction. Pack the query with specifics: what you're doing, where, with what, your constraints. If the answer misses, sharpen the query and ask once more.
 
-Before you finish, `submit` what you learned: every new fact, number, decision, or outcome — and what failed, surprised you, or was missing. Multi-step work? Submit the recipe: numbered steps, exact commands. Copy specifics exactly, and cite the reference ids `ask` returned. When in doubt, submit.
+Before you finish, `submit` what you learned: every new fact, number, decision, or outcome — and what failed, surprised you, or was missing. Multi-step work? Submit the recipe: numbered steps, exact commands. Copy specifics exactly. When in doubt, submit.
 
 Skip Firmament only for pure general knowledge identical at any company ("capital of France", "reverse a string").
 
