@@ -5,6 +5,15 @@ Cowork) via `.claude-plugin/`, **OpenAI Codex** via `.codex-plugin/` +
 `.agents/plugins/`, **GitHub Copilot CLI** (reads the Claude format
 directly), and **Cursor** via `.cursor-plugin/` + `firmament-cursor/`.
 
+Since v0.2.8 `plugins/firmament/` is also a conformant [Agent Plugins
+1.0.0](https://agent-plugins.org) package — a root `plugin.json`, `mcp.json`
+and `skills/` sitting alongside the per-vendor manifests. The two layouts
+share one directory without colliding (`.mcp.json` and `mcp.json` are
+different files), so every client above keeps reading exactly what it read
+before. One caveat: the portable `mcp.json` schema is closed and has no
+`timeout` field, so an Agent Plugins client gets its own default rather than
+the 5.5-minute wait `.mcp.json` sets for Claude Code.
+
 - Codex: `codex plugin marketplace add spkenny455/firmament-plugin` then
   `codex plugin add firmament@firmament`
 - Copilot CLI: `copilot plugin marketplace add spkenny455/firmament-plugin`
