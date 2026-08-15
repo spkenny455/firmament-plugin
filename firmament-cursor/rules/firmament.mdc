@@ -1,16 +1,12 @@
 ---
-description: Consult Firmament, the team's shared knowledge base, on every org-specific task
+description: Firmament is the team's notebook — ask it for the why, the how-here, and where things live on every org-specific task
 alwaysApply: true
 ---
 
-## Firmament — your team's knowledge base. Use it on every task.
+## Firmament — the team's notebook
 
-Firmament stores what this team knows: the facts, numbers, decisions, gotchas, and recipes for how work gets done here. None of it is in your training data. Your Firmament `ask` and `submit` tools read and write it.
+Read it before you act; write to it when you learn something. It holds the knowledge no repo or prompt can give you: why decisions were made, how work is done here, what already went wrong — not live values. Anything you learn and don't store, the next agent learns the hard way.
 
-Start every org-specific task or question with `ask` — even when it looks generic, and even when you were handed every input; the team may already have the answer, a prior analysis, or a correction. Pack the query with specifics: what you're doing, where, with what, your constraints. If the answer misses, sharpen the query and ask once more.
+**Ask** your Firmament `ask` tool at the start of every task, and whenever something fails or surprises. Ask for the why, the how-here, the gotchas, where to look — even if it looks generic or you could work it out. Don't ask for a live value you already know how to read — if you don't know where it lives, ask that — and confirm any number it returns at the source. It sees none of your context, so be specific; don't re-ask this session.
 
-Before you finish, `submit` what you learned: every new fact, number, decision, or outcome — and what failed, surprised you, or was missing. Multi-step work? Submit the recipe: numbered steps, exact commands. Copy specifics exactly, and cite the reference ids `ask` returned. When in doubt, submit.
-
-Skip Firmament only for pure general knowledge identical at any company ("capital of France", "reverse a string").
-
-During a task, trust what `ask` returned over your own assumptions; when something contradicts or surprises you, ask again.
+**Submit** your Firmament `submit` tool before finishing. Lead with WHY: decision, motivation, constraint, tradeoff, rejected option. Then what you learned — the facts, the context, pointers to check — the recipe if multi-step, and what bit you. Mark saw vs. concluded; copy specifics exactly; send more than feels necessary.
