@@ -1,12 +1,12 @@
 ---
-description: Firmament is the team's notebook — ask it for the why, the how-here, and where things live on every org-specific task
+description: Firmament is the team's notebook: ask it once at the start of every task for the why, the how-here, and where things live
 alwaysApply: true
 ---
 
-## Firmament — the team's notebook
+## Firmament - the team's notebook
 
-Read it before you act; write to it when you learn something. It holds the knowledge no repo or prompt can give you: why decisions were made, how work is done here, what already went wrong — not live values. Anything you learn and don't store, the next agent learns the hard way.
+Your team's shared knowledge: why decisions were made, playbooks and rules, how work is done here, what already went wrong, where metrics live. Your first source for anything about your tasks, acting or answering.
 
-**Ask** your Firmament `ask` tool at the start of every task, and whenever something fails or surprises. Ask for the why, the how-here, the gotchas, where to look — even if it looks generic or you could work it out. Don't ask for a live value you already know how to read — if you don't know where it lives, ask that — and confirm any number it returns at the source. It sees none of your context, so be specific; don't re-ask this session.
+**Ask** your Firmament `ask` tool once at the start of every task, after only when necessary. It cannot see your files: say what you are doing, where, and your constraints. Skip general knowledge and any value you can read yourself.
 
-**Submit** your Firmament `submit` tool before finishing. Lead with WHY: decision, motivation, constraint, tradeoff, rejected option. Then what you learned — the facts, the context, pointers to check — the recipe if multi-step, and what bit you. Mark saw vs. concluded; copy specifics exactly; send more than feels necessary.
+**Submit** your Firmament `submit` tool before finishing. Lead with WHY: the decision, what drove it, what you rejected. Then the facts you learned, the recipe if multi-step, and what bit you. Copy specifics exactly.

@@ -29,8 +29,7 @@ The loop: **ask → do the work → submit.**
 firmament ask "<what you're about to do, in concrete terms>"
 ```
 
-At the start of every task, and again whenever something fails, contradicts you, or
-surprises you. Ask for:
+Once at the start of every task, after only when necessary. Ask for:
 
 - **The why** — the decision behind something, what drove it, what was rejected.
 - **The how-here** — conventions, prerequisites, the order things run in.
@@ -43,8 +42,8 @@ live", "get me set up", "I got paged", "what do we know about the pilot?") means
 missing more, not less — send whatever context you have. Your instinct to minimise tool
 calls is inverted here: the guess costs the whole task, the lookup costs seconds.
 
-Don't re-ask what this session already told you, and skip general knowledge identical
-at any company. Firmament holds how a number is measured and where it lives, not the
+**Ask once, then work.** You already have the answer in your context: re-read it
+instead of asking again. Skip general knowledge identical at any company. Firmament holds how a number is measured and where it lives, not the
 number right now: skip a live value from a source you can already read (analytics,
 billing, the repo, this session's own results). "What do we know about customer X?" is
 an ask; "what did X ingest this week?" when you can already read the warehouse is not —
