@@ -69,38 +69,35 @@ on new ground: everything you learn is owed back.
 
 ## Submit
 
-Before you finish, and again the moment you learn something worth keeping. Four parts,
-in order — skip one only when it truly has nothing:
+When the task produced knowledge, before you finish. Write it in prose, the way you
+would want to find it, not as a form with headings.
 
 ```bash
-firmament submit "1) WHY: <the decision and what drove it - motivation, constraint, \
-tradeoff, the option you rejected and why, who called it> 2) WHAT YOU LEARNED: <what is \
-now true and the context around it, plus where to look and what to check so the next \
-agent can see for themselves> 3) HOW YOU DID IT: <the recipe - numbered steps with \
-exact commands, flags, gates and verifications, in the order you ran them> 4) WHAT BIT \
-YOU: <gotchas, prerequisites, failures and their fixes, anything wrong or surprising>"
+firmament submit "<why it went that way and what you rejected, what is now true and how \
+you know it, the recipe if it took more than two steps, and what bit you>"
 ```
 
-1. **WHY** — the part most submits leave out, and the one the team needs most. The repo
-   records what was done; nothing records why. Give the decision, the motivation and
-   constraint behind it, the tradeoff accepted, the alternatives rejected and on what
-   grounds, who called it, what changed someone's mind. If your task produced, revealed
-   or reversed a decision, this part must not be empty.
-2. **WHAT YOU LEARNED** — what is now true and the reasoning around it; what you would
-   tell the next agent doing this. Leave pointers too: exact paths, the command that
-   shows the answer, the table or dashboard, so they can see for themselves instead of
-   trusting a snapshot that rots. Mark how you know each thing (saw it vs. concluded it
-   — a guess written as fact is the worst thing to leave) and where it applies (system,
-   environment, version, and what you didn't check).
-3. **HOW YOU DID IT** — for anything over two steps, the recipe: numbered steps with the
-   exact commands, flags, gates and verifications in the order you ran them, repeatable
-   from your write-up alone.
-4. **WHAT BIT YOU** — a prerequisite, an error and its fix, a convention you worked out,
-   anything wrong or surprising.
+**Only proven, finished things.** No progress updates, no plans, no what you are about
+to try. A half-done migration is not knowledge; the reason you chose that migration is.
+A status or a number counts, as long as you leave the pointer to re-read it.
+
+**Lead with why, and name what you rejected.** The repo records what was done; nothing
+records why. The decision, the constraint behind it, the tradeoff accepted, the option
+you turned down and on what grounds, who called it, what changed someone's mind. This is
+the part most submits leave out and the part the team needs most.
+
+**Say how you know each thing.** Saw it or concluded it — a guess written as fact is the
+worst thing to leave — and where it applies: system, environment, version, and what you
+did not check. Leave pointers: the exact path, the command that shows it, the dashboard,
+so the next agent sees for themselves instead of trusting a snapshot that rots.
+
+**Make a how-to complete.** The steps in order with the exact commands, flags, gates and
+verifications, plus when to use it and what it saves you from. Repeatable from your
+write-up alone, or it is not a recipe.
 
 **Lead with failures.** If guidance was wrong, outdated or incomplete, quote the part
 that was off and give what you actually observed. One honest "this didn't work
-because…" beats a hundred silent successes. A clean run still earns a short submit.
+because…" beats a hundred silent successes.
 
 **Send more than feels necessary.** Length is never a reason to leave something out, and
 you are not the filter: Firmament screens and files what you send. Copy specifics
@@ -111,7 +108,7 @@ replies with a question, answer it: `firmament submit "<answer>" --followup <id>
 
 The terminal (`firmament ask` / `firmament submit`) works everywhere, including scripts
 and CI. Where the connector is added, the MCP tools `ask` and `submit` are the same
-brain; MCP `submit` takes one parameter, `content`, with the same four parts.
+brain; MCP `submit` takes one parameter, `content`, carrying the same things.
 
 ## Setup (once)
 

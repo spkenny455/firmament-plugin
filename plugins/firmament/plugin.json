@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "firmament",
-  "version": "0.2.19",
+  "version": "0.2.21",
   "description": "Your team's shared, verified knowledge for AI agents: ask what's true about your org and how work gets done, then record what you learn. One install wires the ask & submit tools and a standing session reminder to use them.",
   "author": {
     "name": "Firmament",

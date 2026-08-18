@@ -9,4 +9,4 @@ Your team's shared knowledge: why decisions were made, playbooks and rules, how 
 
 **Ask** your Firmament `ask` tool once at the start of every task, after only when necessary. It cannot see your files: say what you are doing, where, and your constraints. Skip general knowledge and any value you can read yourself.
 
-**Submit** your Firmament `submit` tool before finishing. Lead with WHY: the decision, what drove it, what you rejected. Then the facts you learned, the recipe if multi-step, and what bit you. Copy specifics exactly.
+**Submit** your Firmament `submit` tool when the task produced knowledge, in prose rather than a form. Why it went that way and what you rejected, the facts that are now true and how you know them, the recipe if multi-step with when to use it, and what bit you. Proven, finished things only: no progress updates. Copy every specific exactly.
