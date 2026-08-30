@@ -21,7 +21,8 @@ prompt can: why decisions were made, how work is done here, what already went wr
 the conventions in play, and where to look — not live values. Anything you learn and
 don't store, the next agent learns the hard way.
 
-The loop: **ask → do the work → submit.**
+Ask when you don't know. Submit when you learn. Both happen more than once in a
+task — the loop is not a straight line.
 
 ## Ask
 
@@ -29,48 +30,44 @@ The loop: **ask → do the work → submit.**
 firmament ask "<what you're about to do, in concrete terms>"
 ```
 
-Once at the start of every task, after only when necessary. Ask for:
+Before you pick an approach or answer anything about this team — even on a generic-looking
+task. Ask again the moment something fails, surprises you, or changes your course: a new
+question is not a re-ask, repeating one is.
+Ask for:
 
 - **The why** — the decision behind something, what drove it, what was rejected.
 - **The how-here** — conventions, prerequisites, the order things run in.
 - **The gotchas** — what already bit someone doing this.
 - **Where to look** — when you don't know what holds the answer.
 
-Ask even if the task looks generic, even if you could work it out yourself: the team
-often has a prior analysis or a correction you would miss. A terse task ("push it
-live", "get me set up", "I got paged", "what do we know about the pilot?") means you're
-missing more, not less — send whatever context you have. Your instinct to minimise tool
-calls is inverted here: the guess costs the whole task, the lookup costs seconds.
-
-**Ask once, then work.** You already have the answer in your context: re-read it
-instead of asking again. Skip general knowledge identical at any company. Firmament holds how a number is measured and where it lives, not the
-number right now: skip a live value from a source you can already read (analytics,
-billing, the repo, this session's own results). "What do we know about customer X?" is
-an ask; "what did X ingest this week?" when you can already read the warehouse is not —
-read the source, then submit what you found. If you don't know where an answer lives,
-that is the ask. Where an answer names something that moves — a version, a status, a
-branch, a number — treat it as a lead and confirm it at the source.
+**Never re-ask what you already have the answer to** — re-read your context instead. A
+NEW question because the ground moved is not a re-ask; that is the trigger working. Skip
+general knowledge identical at any company. Firmament holds how a number is measured and
+where it lives, not the number right now: skip a live value from a source you can
+already read (analytics, billing, the repo, this session's own results). "What do we
+know about customer X?" is an ask; "what did X ingest this week?" when you can already
+read the warehouse is not — read the source, then submit what you found. If you don't
+know where an answer lives, that is the ask. Where an answer names something that moves
+— a version, a status, a branch, a number — treat it as a lead and confirm it at the
+source.
 
 **Be specific.** Firmament cannot see your conversation, files, or environment; it
 matches on what you type, so a one-liner wastes it. Pack in what you're doing and why
-(the user's ask, in their words), where (repo, service, environment), with what (tools,
+(the user's ask, in their words, and who it is for), where (repo, service, environment), with what (tools,
 versions), your constraints and what you've already tried, and what you're unsure
 about. Concrete names — services, errors, versions — are what retrieval matches on.
 
-```bash
-firmament ask "Deploy the billing service to staging. Go service in repo acme/billing, \
-shared Postgres and Stripe. I plan to run migrations then 'make ship'. What \
-prerequisites, roles, or gotchas should I know?"
-```
 
-Follow the guidance over your own instincts. If an answer missed, sharpen the query
-(names, versions, the exact error) and ask once more. If Firmament has nothing, you are
-on new ground: everything you learn is owed back.
+If an answer missed, sharpen the query (names, versions, the exact error) and ask once
+more. If Firmament has nothing, you are on new ground: everything you learn is owed back.
 
 ## Submit
 
-When the task produced knowledge, before you finish. Write it in prose, the way you
-would want to find it, not as a form with headings.
+The moment a task produces knowledge — a decision made, a problem solved, a gotcha
+that bit you — not only as you finish. One task often produces several, and a later
+submit supersedes an earlier one: when the outcome lands after you already wrote,
+write again and say what it replaces. Write it in prose, the way you would want to
+find it, not as a form with headings.
 
 ```bash
 firmament submit "<why it went that way and what you rejected, what is now true and how \
@@ -78,8 +75,9 @@ you know it, the recipe if it took more than two steps, and what bit you>"
 ```
 
 **Only proven, finished things.** No progress updates, no plans, no what you are about
-to try. A half-done migration is not knowledge; the reason you chose that migration is.
-A status or a number counts, as long as you leave the pointer to re-read it.
+to try — but a decision IS finished, and so is a failure you have confirmed. A half-done
+migration is not knowledge; the reason you chose that migration is. A status or a number
+counts, as long as you leave the pointer to re-read it.
 
 **Lead with why, and name what you rejected.** The repo records what was done; nothing
 records why. The decision, the constraint behind it, the tradeoff accepted, the option
