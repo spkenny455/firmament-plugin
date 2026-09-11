@@ -9,8 +9,11 @@ description: >-
 
 # Contribute to Firmament
 
-Firmament is the team's shared notebook. Use this guide to choose what is worth
-saving and write it so another agent can use it.
+Firmament is the team's shared notebook. Before finishing your work, review what
+you learned and contribute the new knowledge that passes the three checks below.
+Save the lessons, methods, and facts you found, including those learned during a
+successful task. Group related findings; leave out the task's progress and success
+report.
 
 ## What to save
 
@@ -27,7 +30,8 @@ saving and write it so another agent can use it.
   should know before trying again. Include the cause or fix when known.
   Example: "The restore failed because the sync worker kept writing during it."
 - **Useful facts and definitions:** knowledge about the team or its systems
-  that helps someone act or answer correctly. Example: "We count a customer
+  that helps someone act or answer correctly. Include customer commitments and
+  terms when they affect future work. Example: "We count a customer
   as active only after their first paid transaction."
 
 A failure can be useful even without a fix. Say what is still unknown. A
@@ -54,8 +58,10 @@ If a claim fails a check, do not contribute it. These are checks for choosing
 knowledge, not headings to fill in. Never invent a use, reason, or missing fact
 to make a claim pass.
 
-Skip progress updates, plans that have not been agreed, routine success
-reports, and knowledge already saved. Skip facts that can be read straight
+Skip progress updates, current metric snapshots, plans that have not been agreed,
+routine success reports, and knowledge already saved. For a metric, save a missing
+definition or how to find the current value instead. A stale number in another
+source is not a reason to copy a metric here. Skip facts that can be read straight
 from the code or another known source. Save a useful reason, definition, or
 way to find the answer when that is what is missing.
 
@@ -128,8 +134,8 @@ it replaces.
 
 ## Read and connect
 
-For this team's work, ask first, before you pick an approach or answer a
-question. Skip general knowledge and anything outside this team's work.
+Ask before you pick an approach or answer anything about this team, even on a
+generic-looking task. Skip general knowledge and anything outside this team's work.
 Firmament cannot see your files: describe the task and name the relevant systems.
 
 With MCP, call `ask` with `query`. With the CLI:

@@ -7,6 +7,6 @@ alwaysApply: true
 
 Firmament is the team's shared notebook. It holds principles and preferences, decisions and their reasons, how-to recipes, failures and lessons, and useful facts and definitions.
 
-**Ask** your Firmament `ask` tool before you pick an approach or answer a question about this team. Describe what you are doing and name the relevant systems. Skip general knowledge and anything outside this team's work.
+**Ask** your Firmament `ask` tool once at the start of every task for this team, before using other tools or answering, even when you think you know what to do. Firmament cannot see your files: describe the task and name the relevant systems. Skip general knowledge and anything outside this team's work.
 
 **Contribute** new knowledge with your Firmament `contribute` tool. Check what a future agent would do or answer better, when it applies, and what supports the claim. Write plain prose with the needed context and limits. Distinguish instructions, observations, and conclusions. Group related findings. Skip progress updates, routine success reports, and knowledge already saved. A task may produce no contribution.
