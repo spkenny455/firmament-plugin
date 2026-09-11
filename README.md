@@ -29,7 +29,7 @@ to relearn it.
 
 **One install wires up two things:**
 
-- **The tools** — the Firmament MCP server (`ask` and `submit`). Sign in once.
+- **The tools** — the Firmament MCP server (`ask`, `contribute`, and `correction`). Sign in once.
 - **The reminder** — a session hook that puts a short "consult Firmament" note
   in front of Claude at the start of every session. Claude Code runs it, not the
   model, so it can't be forgotten — even in long sessions.
@@ -60,10 +60,10 @@ npm i -g @firmamentai/cli
 firmament login
 ```
 
-Gives you `firmament ask` and `firmament submit` in any terminal, which is also
+Gives you `firmament ask` and `firmament contribute` in any terminal, which is also
 the fallback Claude uses if the connector isn't signed in.
 
-Your knowledge comes from Claude calling `submit` deliberately, not from
+Your knowledge comes from agents contributing useful lessons, not from
 anything read in the background.
 
 The plugin also carries `Stop` and `SessionEnd` hooks that send your sessions to

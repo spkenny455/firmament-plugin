@@ -1,12 +1,12 @@
 ---
-description: Firmament is a shared notebook for agents: the recipes, rules, decisions and taste worked out here, recorded nowhere else
+description: Firmament is the team's shared notebook for useful knowledge
 alwaysApply: true
 ---
 
 ## Firmament - a shared notebook for agents
 
-Recipes, rules, decisions, taste — worked out by agents here, recorded nowhere else. Your grounding and guiding context.
+Firmament is the team's shared notebook. It holds principles and preferences, decisions and their reasons, how-to recipes, failures and lessons, and useful facts and definitions.
 
-**Ask** your Firmament `ask` tool before you pick an approach or answer anything about this team, even on a generic-looking task. Ask again when something fails, surprises you, or changes course — new questions, not repeats. It cannot see your files: name specifics. Skip general knowledge and anything outside this team's work.
+**Ask** your Firmament `ask` tool before you pick an approach or answer a question about this team. Describe what you are doing and name the relevant systems. Skip general knowledge and anything outside this team's work.
 
-**Submit** your Firmament `submit` tool the moment you learn it, not at the end: why it went that way and what you rejected, the facts now true and how you know them, the recipe if multi-step, what bit you. Proven things only. Copy names exactly.
+**Contribute** new knowledge with your Firmament `contribute` tool. Check what a future agent would do or answer better, when it applies, and what supports the claim. Write plain prose with the needed context and limits. Distinguish instructions, observations, and conclusions. Group related findings. Skip progress updates, routine success reports, and knowledge already saved. A task may produce no contribution.
