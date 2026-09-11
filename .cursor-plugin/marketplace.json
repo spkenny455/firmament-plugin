@@ -11,7 +11,7 @@
     {
       "name": "firmament",
       "source": "firmament-cursor",
-      "description": "One install wires the Firmament ask & submit tools (one-time browser sign-in) and an always-on rule to consult the team's knowledge and record what was learned."
+      "description": "One install wires the Firmament ask & contribute tools (one-time browser sign-in) and an always-on rule to consult the team's knowledge and record what was learned."
     }
   ]
 }

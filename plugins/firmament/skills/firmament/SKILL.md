@@ -1,120 +1,152 @@
 ---
 name: firmament
 description: >-
-  Invoke for ANY task OR QUESTION landing in THIS org: deploys/releases, machine/env
-  setup, customer-facing work (pricing, discounts, refunds, support), incidents/paging,
-  internal or third-party APIs, data changes, conventions, writing/testing code in its
-  repos — OR any question about this org's products, customers, partners, metrics,
-  status, history, or decisions. Firmament is the team's notebook — the why, the
-  how-here, the gotchas, where things live; not live values. Read it before you act
-  (`firmament ask`); write to it when you learn something (`firmament submit`, leading
-  with WHY) — even if the task looks generic. Skip a live value you already know how to
-  read (if you don't know where it lives, ask that), general knowledge identical at any
-  company ("capital of France"), and anything this session already told you.
+  Use when deciding whether to contribute knowledge to Firmament or writing a
+  contribution through the CLI or MCP. Covers principles and preferences, decisions and
+  their reasons, how-to recipes, failures and lessons, and useful facts and
+  definitions. Read before using the contribute tool or firmament contribute.
 ---
 
-# Firmament
+# Contribute to Firmament
 
-Firmament is the team's notebook — what agents working here have learned. Read it
-first, before you act; write to it when you learn something. It holds what no repo or
-prompt can: why decisions were made, how work is done here, what already went wrong,
-the conventions in play, and where to look — not live values. Anything you learn and
-don't store, the next agent learns the hard way.
+Firmament is the team's shared notebook. Before finishing your work, review what
+you learned and contribute the new knowledge that passes the three checks below.
+Save the lessons, methods, and facts you found, including those learned during a
+successful task. Group related findings; leave out the task's progress and success
+report.
 
-Ask when you don't know. Submit when you learn. Both happen more than once in a
-task — the loop is not a straight line.
+## What to save
 
-## Ask
+- **Principles and preferences:** rules, conventions, priorities, and tastes
+  that guide the work. Example: "Use plain language in agent instructions.
+  Each instruction should be clear on the first read."
+- **Decisions and their reasons:** what was chosen, why, and what could change
+  the decision. Example: "We chose this vendor because it supports EU hosting.
+  Revisit if that requirement changes."
+- **How-to recipes:** steps for a job, with the prerequisites and checks that
+  matter. Example: "Stop the sync worker, restore the database, check the row
+  counts, then restart the worker."
+- **Failures and lessons:** what went wrong, when it happened, and what someone
+  should know before trying again. Include the cause or fix when known.
+  Example: "The restore failed because the sync worker kept writing during it."
+- **Useful facts and definitions:** knowledge about the team or its systems
+  that helps someone act or answer correctly. Include customer commitments and
+  terms when they affect future work. Example: "We count a customer
+  as active only after their first paid transaction."
+
+A failure can be useful even without a fix. Say what is still unknown. A
+successful task can reveal a useful method or a missing step. A person's
+instruction can establish a preference without an experiment.
+
+## Check before saving
+
+Answer all three questions about each thing you want to save:
+
+1. **What would a future agent do or answer better with this knowledge?**
+   Name a concrete use: avoid a mistake, follow a preference, make a choice,
+   answer correctly, or avoid costly trial and error. "It might help" is not
+   enough.
+2. **When does it apply?**
+   Keep the system, situation, prerequisites, and limits that matter. A fix
+   that worked in one environment does not establish a rule for every system.
+3. **What supports the claim as written?**
+   An instruction tells you what someone wants. An observation tells you what
+   happened. A conclusion needs the evidence and reasoning behind it. Make
+   clear which it is, and keep any uncertainty.
+
+If a claim fails a check, do not contribute it. These are checks for choosing
+knowledge, not headings to fill in. Never invent a use, reason, or missing fact
+to make a claim pass.
+
+Skip progress updates, current metric snapshots, plans that have not been agreed,
+routine success reports, and knowledge already saved. For a metric, save a missing
+definition or how to find the current value instead. A stale number in another
+source is not a reason to copy a metric here. Skip facts that can be read straight
+from the code or another known source. Save a useful reason, definition, or
+way to find the answer when that is what is missing.
+
+Examples:
+
+- "The migration is 80% done" is a progress update. Skip it.
+- "Followed the runbook and it worked" adds no new knowledge. Skip it.
+- "Two retries worked, so always retry three times" goes beyond the evidence.
+  Do not turn those two results into a general rule.
+- "The account owner said Northwind requires 16:9 decks" records an instruction
+  and where it applies. Save it if it is new.
+- "The staging restore failed while the sync worker was running; the cause
+  is still unknown" may be worth saving if it helps the next restore attempt.
+  Do not claim the worker caused the failure without evidence.
+
+## Write the contribution
+
+State the knowledge in plain prose. Include enough context for someone who
+has not seen this conversation to understand and use it. Keep the relevant
+limits and say what supports the claim. Copy names, commands, paths, and
+error messages exactly when they are needed.
+
+Include the details that fit the knowledge:
+
+- For a principle or preference, say who gave it and what work it governs.
+- For a decision, give the reason and any rejected option that explains the
+  choice, when the source provides them.
+- For a recipe, give the steps in order, needed commands, prerequisites, and
+  checks. Link to a maintained recipe when one already exists. If only part
+  was tested, say which part.
+- For a failure, give the conditions and observed result. Include the cause,
+  fix, or lesson only when supported.
+- For a fact or definition, name what it describes and where it came from.
+
+Leave a source pointer when it helps the next agent check the claim. Include
+dates or versions when they limit where it applies. These details are not a
+form: include what the reader needs and leave out the task's play-by-play.
+
+## Send it
+
+Group related findings into one contribution once you know what the lesson is.
+You can contribute during a task; the whole task does not have to be finished.
+Send another contribution only when there is useful new knowledge or a
+correction. A task may produce no contribution.
+
+With MCP, call `contribute` with the knowledge in `content`.
+With the CLI:
 
 ```bash
-firmament ask "<what you're about to do, in concrete terms>"
+firmament contribute "<knowledge worth saving>"
 ```
 
-Before you pick an approach or answer anything about this team — even on a generic-looking
-task. Ask again the moment something fails, surprises you, or changes your course: a new
-question is not a re-ask, repeating one is.
-Ask for:
-
-- **The why** — the decision behind something, what drove it, what was rejected.
-- **The how-here** — conventions, prerequisites, the order things run in.
-- **The gotchas** — what already bit someone doing this.
-- **Where to look** — when you don't know what holds the answer.
-
-**Never re-ask what you already have the answer to** — re-read your context instead. A
-NEW question because the ground moved is not a re-ask; that is the trigger working. Skip
-general knowledge identical at any company. Firmament holds how a number is measured and
-where it lives, not the number right now: skip a live value from a source you can
-already read (analytics, billing, the repo, this session's own results). "What do we
-know about customer X?" is an ask; "what did X ingest this week?" when you can already
-read the warehouse is not — read the source, then submit what you found. If you don't
-know where an answer lives, that is the ask. Where an answer names something that moves
-— a version, a status, a branch, a number — treat it as a lead and confirm it at the
-source.
-
-**Be specific.** Firmament cannot see your conversation, files, or environment; it
-matches on what you type, so a one-liner wastes it. Pack in what you're doing and why
-(the user's ask, in their words, and who it is for), where (repo, service, environment), with what (tools,
-versions), your constraints and what you've already tried, and what you're unsure
-about. Concrete names — services, errors, versions — are what retrieval matches on.
-
-
-If an answer missed, sharpen the query (names, versions, the exact error) and ask once
-more. If Firmament has nothing, you are on new ground: everything you learn is owed back.
-
-## Submit
-
-The moment a task produces knowledge — a decision made, a problem solved, a gotcha
-that bit you — not only as you finish. One task often produces several, and a later
-submit supersedes an earlier one: when the outcome lands after you already wrote,
-write again and say what it replaces. Write it in prose, the way you would want to
-find it, not as a form with headings.
+If Firmament asks a follow-up question, answer it using the returned ID.
+With MCP, pass `content` and `followup_id` to `contribute`. With the CLI:
 
 ```bash
-firmament submit "<why it went that way and what you rejected, what is now true and how \
-you know it, the recipe if it took more than two steps, and what bit you>"
+firmament contribute "<answer>" --followup <id>
 ```
 
-**Only proven, finished things.** No progress updates, no plans, no what you are about
-to try — but a decision IS finished, and so is a failure you have confirmed. A half-done
-migration is not knowledge; the reason you chose that migration is. A status or a number
-counts, as long as you leave the pointer to re-read it.
+If an answer from Firmament was wrong, stale, or only true in a narrower case,
+use the answer ID printed beneath it. With MCP, call `correction` with
+`answer_id` and `content`. With the CLI:
 
-**Lead with why, and name what you rejected.** The repo records what was done; nothing
-records why. The decision, the constraint behind it, the tradeoff accepted, the option
-you turned down and on what grounds, who called it, what changed someone's mind. This is
-the part most submits leave out and the part the team needs most.
+```bash
+firmament correction <answer-id> "<what was wrong, what you observed, and what is right>"
+```
 
-**Say how you know each thing.** Saw it or concluded it — a guess written as fact is the
-worst thing to leave — and where it applies: system, environment, version, and what you
-did not check. Leave pointers: the exact path, the command that shows it, the dashboard,
-so the next agent sees for themselves instead of trusting a snapshot that rots.
+Without an answer ID, contribute the supported correction and say which knowledge
+it replaces.
 
-**Make a how-to complete.** The steps in order with the exact commands, flags, gates and
-verifications, plus when to use it and what it saves you from. Repeatable from your
-write-up alone, or it is not a recipe.
+## Read and connect
 
-**Lead with failures.** If guidance was wrong, outdated or incomplete, quote the part
-that was off and give what you actually observed. One honest "this didn't work
-because…" beats a hundred silent successes.
+Ask before you pick an approach or answer anything about this team, even on a
+generic-looking task. Skip general knowledge and anything outside this team's work.
+Firmament cannot see your files: describe the task and name the relevant systems.
 
-**Send more than feels necessary.** Length is never a reason to leave something out, and
-you are not the filter: Firmament screens and files what you send. Copy specifics
-exactly — names, versions, IDs, numbers, commands, paths, error text. If Firmament
-replies with a question, answer it: `firmament submit "<answer>" --followup <id>`.
+With MCP, call `ask` with `query`. With the CLI:
 
-## Two doors, one brain
+```bash
+firmament ask "<question>"
+```
 
-The terminal (`firmament ask` / `firmament submit`) works everywhere, including scripts
-and CI. Where the connector is added, the MCP tools `ask` and `submit` are the same
-brain; MCP `submit` takes one parameter, `content`, carrying the same things.
+Check changing values at their source. Firmament can tell you where to look
+and how a value is defined.
 
-## Setup (once)
-
-- **Authenticate:** run `firmament login` yourself — it opens a browser on the person's
-  screen, so tell them an approval is about to pop. Check with `firmament whoami`. True
-  headless runs only: `FIRMAMENT_TOKEN`.
-- **Endpoint:** production by default; override with `--url` or `$FIRMAMENT_API_URL`.
-- **Install:** `npm install -g @firmamentai/cli`. No npm? In this repo:
-  `go run ./cmd/firmament ask "…"`.
-- Auth error from `ask`/`submit`? Run `firmament login`, have them approve the browser
-  prompt, and retry.
+If the CLI is missing, install it with `npm install -g @firmamentai/cli`.
+Check sign-in with `firmament whoami`. If sign-in is needed, tell the user
+that `firmament login` opens a browser, run it, and let them complete sign-in.
