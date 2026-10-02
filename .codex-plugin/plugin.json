@@ -71,7 +71,7 @@
             },
             {
               "description": "Write an email that passes the review gate",
-              "prompt": "Write a refund confirmation email to Tom for his €120 payment from September 20, 2026, sent today, and check it with our Firmament gate before you show it to me.",
+              "prompt": "Write a refund confirmation email to Tom for his €120 payment from yesterday (capture ID cap_8F2K91), and check it with our Firmament gate before you show it to me.",
               "tools_triggered": "list_gates, run_gate",
               "expected_behavior": "Writes the email with the Sent and Payment date lines the gate asks for, runs the Customer payment email gate, and shows the email once the gate passes it."
             }
