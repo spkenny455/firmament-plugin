@@ -1,16 +1,15 @@
 {
   "name": "firmament",
-  "description": "Firmament — your team's shared, verified knowledge for AI agents.",
   "owner": {
     "name": "Firmament",
-    "url": "https://getfirmament.com"
+    "email": "support@getfirmament.com"
   },
+  "description": "The Firmament plugin: a shared notebook for your team.",
   "plugins": [
     {
       "name": "firmament",
-      "source": "./plugins/firmament",
-      "description": "Connect Claude Code to Firmament — your team's shared, verified knowledge. One install wires the ask & submit tools and a standing reminder to consult them every session.",
-      "version": "0.2.22"
+      "description": "A shared notebook for your team. Your AI assistant can look things up in it and add notes when you ask.",
+      "source": "./"
     }
   ]
 }

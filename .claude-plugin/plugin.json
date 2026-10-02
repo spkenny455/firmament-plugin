@@ -1,0 +1,19 @@
+{
+  "name": "firmament",
+  "displayName": "Firmament",
+  "version": "1.0.0",
+  "description": "A shared notebook for your team. Your AI assistant can look things up in it and add notes when you ask.",
+  "author": {
+    "name": "Firmament",
+    "email": "support@getfirmament.com",
+    "url": "https://getfirmament.com"
+  },
+  "homepage": "https://getfirmament.com",
+  "repository": "https://github.com/spkenny455/firmament-plugin",
+  "license": "MIT",
+  "keywords": [
+    "firmament",
+    "firmament notebook",
+    "firmament review gates"
+  ]
+}

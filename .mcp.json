@@ -2,8 +2,7 @@
   "mcpServers": {
     "firmament": {
       "type": "http",
-      "url": "https://mcp.getfirmament.com/mcp",
-      "timeout": 330000
+      "url": "https://platform.getfirmament.com/mcp"
     }
   }
 }

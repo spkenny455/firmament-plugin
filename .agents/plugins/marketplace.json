@@ -8,7 +8,7 @@
       "name": "firmament",
       "source": {
         "source": "local",
-        "path": "./plugins/firmament"
+        "path": "./"
       },
       "policy": {
         "installation": "AVAILABLE",

@@ -1,84 +1,58 @@
-# Firmament for Claude Code (and Codex, Copilot CLI, Cursor)
+# Firmament
 
-One repo, four ecosystems: this marketplace serves **Claude Code** (and
-Cowork) via `.claude-plugin/`, **OpenAI Codex** via `.codex-plugin/` +
-`.agents/plugins/`, **GitHub Copilot CLI** (reads the Claude format
-directly), and **Cursor** via `.cursor-plugin/` + `firmament-cursor/`.
+Firmament is a shared notebook for your team. This plugin lets your AI assistant use it.
 
-Since v0.2.8 `plugins/firmament/` is also a conformant [Agent Plugins
-1.0.0](https://agent-plugins.org) package — a root `plugin.json`, `mcp.json`
-and `skills/` sitting alongside the per-vendor manifests. The two layouts
-share one directory without colliding (`.mcp.json` and `mcp.json` are
-different files), so every client above keeps reading exactly what it read
-before. One caveat: the portable `mcp.json` schema is closed and has no
-`timeout` field, so an Agent Plugins client gets its own default rather than
-the 5.5-minute wait `.mcp.json` sets for Claude Code.
+With it, your assistant can:
 
-- Codex: `codex plugin marketplace add spkenny455/firmament-plugin` then
-  `codex plugin add firmament@firmament`
-- Copilot CLI: `copilot plugin marketplace add spkenny455/firmament-plugin`
-  then `copilot plugin install firmament@firmament`
-- Cursor: install "Firmament" from the Cursor Marketplace (pending review)
+- search the notebook before it answers, to find what your team already wrote down;
+- read pages, and add or update notes when you ask;
+- check a draft against one of your team's checklists, called review gates, and tell you what to fix.
 
-The rest of this README covers Claude Code.
+You need a Firmament account. You sign in once, in your browser, the first time the assistant connects.
 
-Connect Claude Code to **[Firmament](https://getfirmament.com)** — your team's
-shared, verified knowledge. Your agent asks what's true about your org and how
-work gets done here, then records what it learns so the next agent doesn't have
-to relearn it.
+## What's inside
 
-**One install wires up two things:**
+- **One server address:** `https://platform.getfirmament.com/mcp`, the Firmament tools.
+- **Two skills:** `firmament` (how to use the notebook well) and `firmament-gate-authoring` (how to write a checklist when you ask for one).
 
-- **The tools** — the Firmament MCP server (`ask` and `submit`). Sign in once.
-- **The reminder** — a session hook that puts a short "consult Firmament" note
-  in front of Claude at the start of every session. Claude Code runs it, not the
-  model, so it can't be forgotten — even in long sessions.
+No hooks, scripts or programs.
+
+## Tools
+
+| Tool | What it does | Changes data |
+|---|---|---|
+| `ground` | Searches the notebook | No |
+| `list_projects`, `list_pages`, `read_page`, `list_tags` | Lists, searches and reads pages | No |
+| `create_page` | Adds a new page | Adds |
+| `edit_page` | Changes text on a page | Yes |
+| `delete_page` | Deletes a page (it can be restored) | Yes |
+| `list_gates`, `get_gate` | Shows checklists | No |
+| `run_gate`, `test_gate` | Checks a draft and saves the result | Adds |
+| `create_gate`, `edit_gate`, `edit_tests`, `publish_gate` | Writes and publishes a checklist (signed-in people only) | Yes |
+
+The assistant only sees the pages you can see.
 
 ## Install
 
-In your terminal (works for both the terminal and desktop app — the two share
-plugin config):
+**Claude Code**
 
 ```
-claude plugin marketplace add spkenny455/firmament-plugin
-claude plugin install firmament@firmament
+/plugin marketplace add spkenny455/firmament-plugin
+/plugin install firmament@firmament
 ```
 
-No `claude` command? The desktop app doesn't include it — install it first:
-`npm i -g @anthropic-ai/claude-code`.
+**Claude, ChatGPT, Codex and Grok:** install Firmament from each app's directory. Or add a custom connector with the URL `https://platform.getfirmament.com/mcp`.
 
-Restart Claude Code, then complete the browser sign-in when it prompts for the
-`firmament` server (terminal app: run `/mcp` and pick `firmament`). That's it.
+## Data
 
-Note: the `/plugin` slash command only exists in the terminal app — on the
-desktop app use the terminal commands above.
+- The plugin talks to two places: `https://platform.getfirmament.com/mcp` (the tools) and `https://login.getfirmament.com` (sign-in).
+- It sends only what the assistant passes to a tool: a search question, page text, or a draft to check.
+- The plugin stores no passwords or keys. Your AI app keeps the sign-in.
 
-## Optional: the command-line tool
+Privacy: https://getfirmament.com/privacy
+Terms: https://getfirmament.com/terms
+Support: support@getfirmament.com
 
-```
-npm i -g @firmamentai/cli
-firmament login
-```
+## License
 
-Gives you `firmament ask` and `firmament submit` in any terminal, which is also
-the fallback Claude uses if the connector isn't signed in.
-
-Your knowledge comes from Claude calling `submit` deliberately, not from
-anything read in the background.
-
-The plugin also carries `Stop` and `SessionEnd` hooks that send your sessions to
-your Firmament workspace, where they are stored and used to measure and improve
-how well agents use Firmament. They are not read into your knowledge base and
-they produce nothing you will see. They do nothing at all unless the `firmament`
-CLI is installed and signed in, and `firmament capture uninstall` removes them.
-
-## Requirements
-
-- Claude Code with plugin support.
-- A Firmament account. Don't have one yet? Start at
-  [getfirmament.com](https://getfirmament.com).
-
-## Links
-
-- Website: https://getfirmament.com
-- Connect other agents (Cursor, VS Code, and more): https://app.getfirmament.com/connect
+MIT. See [LICENSE](LICENSE).

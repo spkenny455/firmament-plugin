@@ -1,0 +1,100 @@
+{
+  "name": "firmament",
+  "version": "1.0.0",
+  "description": "A shared notebook for your team. Your AI assistant can look things up in it and add notes when you ask.",
+  "author": {
+    "name": "Firmament",
+    "email": "support@getfirmament.com",
+    "url": "https://getfirmament.com"
+  },
+  "homepage": "https://getfirmament.com",
+  "repository": "https://github.com/spkenny455/firmament-plugin",
+  "license": "MIT",
+  "keywords": [
+    "firmament",
+    "firmament notebook",
+    "firmament review gates"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Firmament",
+    "shortDescription": "Team notebook for AI agents",
+    "longDescription": "Firmament is a shared notebook for your team. With it, your AI assistant can search the notebook, read pages, and add or update notes when you ask. Before it answers, it can check what your team already wrote down, such as a rule or a past decision. Your team can also keep simple checklists, called review gates. The assistant can run a draft through a checklist and tell you what to fix. You need a Firmament account, and the assistant only sees the pages you can see.",
+    "developerName": "Firmament",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://getfirmament.com",
+    "supportURL": "mailto:support@getfirmament.com",
+    "privacyPolicyURL": "https://getfirmament.com/privacy",
+    "termsOfServiceURL": "https://getfirmament.com/terms",
+    "defaultPrompt": [
+      "What has our team written down about this? Check Firmament.",
+      "Save this to our Firmament notebook.",
+      "Check this draft with our Firmament review gate."
+    ],
+    "brandColor": "#1F1F1F",
+    "composerIcon": "./assets/logo.png",
+    "logo": "./assets/logo.png"
+  },
+  "extensions": {
+    "com.openai": {
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Answer a question from the team's notebook",
+              "prompt": "Using Firmament, how long do we wait between retries of a failed payment?",
+              "tools_triggered": "ground",
+              "expected_behavior": "Searches the notebook and answers: after 1 hour, then 6 hours, then 24 hours, citing payments/retries.md. No page is changed."
+            },
+            {
+              "description": "Record a decision on the right page",
+              "prompt": "Record in Firmament that we decided today to stop retrying a failed payment after the 24-hour retry.",
+              "tools_triggered": "ground, read_page, edit_page",
+              "expected_behavior": "Finds payments/retries.md and adds the decision there without rewriting the rest of the page, then replies that it was saved. If the decision is already on the page, it says so instead of adding it twice."
+            },
+            {
+              "description": "Update a fact everywhere it appears",
+              "prompt": "Our refund window changed from 30 days to 45 days. Update every Firmament page that mentions the 30-day window.",
+              "tools_triggered": "list_pages, read_page, edit_page",
+              "expected_behavior": "Searches pages for the window, changes it to 45 days on payments/refunds.md and payments/disputes.md, and keeps the sentence saying disputes are excluded. If no page still says 30 days, it reports that every page already says 45 days."
+            },
+            {
+              "description": "Check an email with a review gate before it is sent",
+              "prompt": "Check this email with our Firmament gate before I send it:\n\nSent: October 2, 2026\nSubject: Payment problem\nHi Tom,\nYour payment bounced because you didn't have enough money in your account.\nThe Acme team",
+              "tools_triggered": "list_gates, run_gate",
+              "expected_behavior": "Runs the Customer payment email gate. It fails on No blame on customer and Says what happens next, and the reply gives the gate's fixes. The assistant does not say the email is ready to send."
+            },
+            {
+              "description": "Write an email that passes the review gate",
+              "prompt": "Write a refund confirmation email to Tom for his €120 payment from September 20, 2026, sent today, and check it with our Firmament gate before you show it to me.",
+              "tools_triggered": "list_gates, run_gate",
+              "expected_behavior": "Writes the email with the Sent and Payment date lines the gate asks for, runs the Customer payment email gate, and shows the email once the gate passes it."
+            }
+          ],
+          "negative": [
+            {
+              "description": "General knowledge question",
+              "prompt": "What is the capital of Australia?"
+            },
+            {
+              "description": "Unrelated coding task",
+              "prompt": "Write a Python function that reverses a string."
+            },
+            {
+              "description": "Live news, which the notebook does not hold",
+              "prompt": "What are today's headlines about card payment regulation?"
+            }
+          ]
+        }
+      },
+      "publication": {
+        "release_notes": "First release: search the team's notebook, read and update its pages, and check work with the team's review gates."
+      }
+    }
+  }
+}
