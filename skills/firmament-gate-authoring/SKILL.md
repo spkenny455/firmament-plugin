@@ -5,7 +5,7 @@ description: Create or change a Firmament review gate when a user asks you to ke
 
 # Writing review gates
 
-A gate is a short list of yes/no questions. A reviewer answers them about one piece of work. The work passes only if every answer passes.
+A gate is a short list of yes/no questions. A reviewer answers them about one piece of work. A failed blocking question fails the gate. A failed warning-only question leaves the gate passing with feedback. Report the returned overall result and any warnings.
 
 Create or change a gate only when a user asks. Never change a gate to make your own work pass.
 
