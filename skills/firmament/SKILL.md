@@ -17,6 +17,8 @@ For a large project list, `list_tags` shows optional subject filters. `list_page
 
 ## Decide what to save
 
+Write to the notebook only when the user asks you to save or update it, or has already authorized that notebook maintenance. Otherwise, propose the useful change without saving it.
+
 Save what changes future work: agreed decisions and reasons, rejected options, rules and exceptions, hard-to-find facts, proven fixes, useful open questions, and repeatable steps with prerequisites and verification. Keep product purpose and behavior decisions even when they resemble instructions in this skill.
 
 Skip routine progress, transcripts, easy code lookups and repeated findings. Nothing new or newly corrected means no edit.
