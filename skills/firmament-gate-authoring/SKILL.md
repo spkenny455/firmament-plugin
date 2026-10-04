@@ -16,7 +16,7 @@ Questions that look right often fail good work. Only scores on real work show wh
 1. **Interview the user.** Ask what they would reject and why. When their words are vague, ask for examples: one they liked and one they didn't. Aim for five accepted and five rejected pieces of work, with what they said about each.
 2. **Compare them.** A rule is only what the rejected work gets wrong. Something all the good examples happen to share is not a rule unless a rejected example lacked it.
 3. **Build a test set of about 15 examples.** Write good ones that differ from the user's: other situations, much shorter and much longer, other formats. Write bad ones that each break one rule: copy a good one and change only that, including the thing being missing entirely. Show the user a handful with your labels and fix any they disagree with. If they disagree often, go back to step 1.
-4. **Write candidate questions,** one for each point the user made (see "Questions"), and `what_to_submit`.
+4. **Write candidate questions,** one for each point the user made (see "Questions"), `when_to_use` (which tasks this gate reviews), and `what_to_submit` (the complete input it needs). Both context fields are required when creating a gate.
 5. **Save the examples as tests, create the gate with all candidates, and test** (see "Testing").
 6. **Keep the questions that work.** Check them with the user, then publish. Tell the user the questions and which tests passed or failed.
 
