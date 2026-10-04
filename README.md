@@ -41,7 +41,17 @@ The assistant only sees the pages you can see.
 /plugin install firmament@firmament
 ```
 
-**Claude, ChatGPT, Codex and Grok:** install Firmament from each app's directory. Or add a custom connector with the URL `https://platform.getfirmament.com/mcp`.
+**Claude, ChatGPT, Codex and Grok:** where Firmament is listed, install it from the app's directory. Directory availability varies by app. To use the hosted tools before a listing is available, add a custom connector with the URL `https://platform.getfirmament.com/mcp` and sign in with your Firmament account. A custom connector provides the tools; it does not install this plugin's two skills.
+
+## Try a real task
+
+Start with a workspace that contains your team's context and, for the review step, a published gate:
+
+1. "Use our notebook to recommend a focused approach to finding three design partners. Cite the pages you used and separate facts from assumptions. Don't save anything yet."
+2. "Run that proposal through our Good Strategy / Bad Strategy gate. Report the actual result, blocking issues and advisory feedback. Don't change the gate."
+3. "Save the reviewed proposal in our notebook as a proposal, not an approved decision. Then add this checkpoint: did a partner return with a second real task without prompting?"
+
+Replace the task and gate name with ones relevant to your team. Gate reviews use your workspace's Firmament review credit, separate from your AI app subscription. The account needs access to the relevant project; creating or changing gates also requires the appropriate workspace permissions. A gate pass assesses the submitted work against your checks, not whether a strategy is guaranteed to succeed.
 
 ## Data
 
