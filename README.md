@@ -15,7 +15,9 @@ You need a Firmament account. You sign in once, in your browser, the first time 
 - **One server address:** `https://platform.getfirmament.com/mcp`, the Firmament tools.
 - **Two skills:** `firmament` (how to use the notebook well) and `firmament-gate-authoring` (how to write a checklist when you ask for one).
 
-No hooks, scripts or programs.
+- **One hook, for Claude only:** when a session starts, it gives the assistant the Firmament rule: search the notebook before each new task, and save what it learns. The hook only prints a text file (`hooks/session-start.json`).
+
+No scripts or programs.
 
 ## Tools
 
