@@ -28,7 +28,7 @@
       "Write"
     ],
     "websiteURL": "https://getfirmament.com",
-    "supportURL": "mailto:support@getfirmament.com",
+    "supportURL": "https://getfirmament.com/support",
     "privacyPolicyURL": "https://getfirmament.com/privacy",
     "termsOfServiceURL": "https://getfirmament.com/terms",
     "defaultPrompt": [
@@ -78,15 +78,15 @@
           ],
           "negative": [
             {
-              "description": "General knowledge question",
+              "description": "General knowledge question: answer Canberra without calling any Firmament tool or changing the notebook.",
               "prompt": "What is the capital of Australia?"
             },
             {
-              "description": "Unrelated coding task",
+              "description": "Unrelated coding task: provide a Python function that reverses a string without calling any Firmament tool or changing the notebook.",
               "prompt": "Write a Python function that reverses a string."
             },
             {
-              "description": "Live news, which the notebook does not hold",
+              "description": "Live news, which the notebook does not hold: use a current news source with citations, or explain that current news access is unavailable. Do not call any Firmament tool or present notebook content as today's headlines.",
               "prompt": "What are today's headlines about card payment regulation?"
             }
           ]

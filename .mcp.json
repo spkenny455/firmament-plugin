@@ -2,7 +2,14 @@
   "mcpServers": {
     "firmament": {
       "type": "http",
-      "url": "https://platform.getfirmament.com/mcp"
+      "url": "https://platform.getfirmament.com/mcp",
+      "extensions": {
+        "com.openai": {
+          "auth": {
+            "type": "oauth"
+          }
+        }
+      }
     }
   }
 }
